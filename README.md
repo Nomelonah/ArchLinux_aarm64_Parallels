@@ -25,14 +25,18 @@ To prevent permission locking or broken environments from previous configuration
 
 Since Parallels Desktop encapsulates the entire virtual machine as a single, independent capsule, deployment is incredibly simple.
 
-### Step 1: Download the Virtual Machine Capsule
-Download the single `ArchLinux_aarm64_Parallels.pvm` file directly from this repository (or from the Releases page) and save it to your local directory on your Mac (e.g., `~/Documents/Parallels/`).
+### Step 1: Download all split volumes
+Download all the split zip parts (`ArchLinux_ARM64_Parallels.zip.aa`, `ArchLinux_ARM64_Parallels.zip.ab`, etc.) from the Releases page into the **same directory** on your host Mac.
 
-### Step 2: Import into Parallels
-1. Locate the downloaded file named **`ArchLinux_aarm64_Parallels.pvm`** (the official Parallels VM capsule).
-2. Double-click the `.pvm` file to trigger Parallels Desktop.
-3. When prompted with the dialog window **"Was this virtual machine moved or copied?"**, make sure to click **`Copied`**.
-4. The system will automatically update its internal hardware bindings and boot into the GNOME login interface smoothly.
+### Step 2: Merge and Unzip via Mac Terminal
+1. Open the Terminal application **on your host Mac** (not inside a VM).
+2. Navigate to the folder where you downloaded the split volumes:
+   ```bash
+   cd "/path/to/your/downloaded/folder"
+   cat ArchLinux_ARM64_Parallels.zip.* > "ArchLinux_ARM64_Parallels_user&rooot-passwd123456.pvm.zip"
+3. And then unzip it.
+4. Double-click the `.pvm` file to trigger Parallels Desktop.
+5. The system will automatically update its internal hardware bindings and boot into the GNOME login interface smoothly.
 
 ### Step 3: Run Post-Installation Tools
 Once logged in, open the terminal and feel free to manage packages directly:
