@@ -25,9 +25,16 @@
 
 得益于 Mac Parallels Desktop 完美的胶囊封装机制，你不需要任何复杂的命令导出，它天生就是一个独立的文件。
 
-### 第一步：下载虚拟机胶囊文件
-直接从本仓库（或 Release 页面）下载独立的 `ArchLinux_aarm64_Parallels.pvm` 文件，并将其保存到你 Mac 本地的日常目录中（例如 `~/Documents/Parallels/`）。
+### 第一步：下载全套分卷文件
+从项目的 **Releases** 页面下载所有的分卷压缩包文件（`ArchLinux_ARM64_Parallels.zip.aa`、`ArchLinux_ARM64_Parallels.zip.ab` 等），并将它们保存到 Mac 宿主机本地的**同一个文件夹**中。
 
+### 第二步：Mac 终端一键合并与解压
+1. 打开 Mac 实体机自带的 **终端 (Terminal)** 应用程序（注意：是在 Mac 苹果系统里打开，不是在虚拟机里哦）。
+2. 在终端中切换到你存放下载分卷的实际目录路径：
+   ```bash
+   cd "/你的/下载/文件夹/实际路径"
+   cat ArchLinux_ARM64_Parallels.zip.* > "ArchLinux_ARM64_Parallels_user&rooot-passwd123456.pvm.zip"
+3. 之后直接解压这个文件
 ### 第二步：无脑肉身强灌 Parallels
 1. 在 Mac 访达中找到下载好的 **`ArchLinux_aarm64_Parallels.pvm`** 文件（带有红蓝色小杠图标的虚拟机大胶囊）。
 2. 鼠标双击这个 `.pvm` 文件，Parallels Desktop 会自动被唤醒并加载它。
